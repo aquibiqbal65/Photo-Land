@@ -44,7 +44,7 @@ const Footer = () => {
 
       <div className='py-10 border-t border-t-white/10'>
         <div className='container mx-auto'> 
-          <div className='text-center text-sm text-white/60'>Copyright &copy; PixelPerfect 2024. All rights reserved.</div>
+          <div className='text-center text-sm text-white/60'>Copyright &copy; PhotoLand 2024. All rights reserved.</div>
         </div>
       </div>
     </footer>
