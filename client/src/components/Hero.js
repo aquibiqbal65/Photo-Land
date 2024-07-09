@@ -19,7 +19,7 @@ const Hero = () => {
             <MainSlider />
           </div>
           {/* promos */}
-          <div className="flex flex-col gap-y-[30px] w-full max-w-lg max-auto h-[500px]">
+          <div className="flex flex-col gap-y-[30px] w-full max-w-lg mx-auto h-[500px]">
             {/* promo inmg 1*/}
             <div className="grad flex-1 h-[250px] rounded-[8px] overflow-hidden relative p-6">
               <div className="flex flex-col max-w-[144px] h-full justify-center">

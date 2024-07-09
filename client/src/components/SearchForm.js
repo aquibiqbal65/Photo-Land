@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const SearchForm = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
-  const [isAnimating, setIsAnimating] = useState("false");
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {

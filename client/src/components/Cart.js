@@ -3,8 +3,30 @@ import { IoArrowForward, IoCartOutline, IoClose } from "react-icons/io5";
 import { CartContext } from "../context/CartContext";
 import CartItem from "../components/CartItem";
 
+//stripe
+
+import {loadStripe} from '@stripe/stripe-js'
+import { request } from '../request';
+
 const Cart = () => {
   const { setIsOpen, cart, total, clearCart } = useContext(CartContext);
+
+  const stripePromise = loadStripe('pk_test_51PabdBRt1xR8hPm64hdFMInfXt4WmSTLHsRb083ogToN6yvjA8iHdO1jTZJlGchkKPgVDfoST2PzBPIGTHIk0kas00VO0QE6ex');
+
+  const handlePayment = async () => {
+
+    try {
+      const stripe = await stripePromise;
+      const res = await request.post('/orders', {
+        cart,
+      });
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch(error){
+      console.error('Error:', error);
+    }
+  }
   return (
     <div className="w-full h-full px-4 text-white">
       <div className="overflow-y-auto overflow-x-hidden h-[75vh]">
@@ -38,7 +60,9 @@ const Cart = () => {
             <button
             onClick={clearCart}
              className="btn btn-accent hover:bg-accent-hover text-primary">clear cart</button>
-            <button className="btn btn-accent hover:bg-accent-hover text-primary flex-1 px-2 gap-x-2">
+            <button
+            onClick={handlePayment}
+            className="btn btn-accent hover:bg-accent-hover text-primary flex-1 px-2 gap-x-2">
               Checkout
               <IoArrowForward className="text-lg" />
               </button>
