@@ -4,6 +4,7 @@ import MainSlider from "../components/MainSlider";
 
 import PromoImg1 from "../img/promo_img1.png";
 import PromoImg2 from "../img/promo_img2.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -26,9 +27,9 @@ const Hero = () => {
                 <div className="text-[20px] uppercase font-medium leading-tight mb-4">
                   Save 35% all DSLR Cameras
                 </div>
-                <a href="#" className="uppercase text-accent">
+                <Link className="uppercase text-accent" to={"/products/1"}>
                   Shop now
-                </a>
+                </Link>
               </div>
               <img
                 className="absolute z-20 -top-2 -right-4"
@@ -42,9 +43,9 @@ const Hero = () => {
                 <div className="text-[20px] uppercase font-medium leading-tight mb-4">
                   Save 25% all Mirroless Cameras
                 </div>
-                <a href="#" className="uppercase text-accent">
+                <Link className="uppercase text-accent" to={"/products/2"}>
                   Shop now
-                </a>
+                </Link>
               </div>
               <img
                 className="absolute z-20 -top-2 -right-4"

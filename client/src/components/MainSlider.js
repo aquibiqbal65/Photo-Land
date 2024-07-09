@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import { Pagination } from "swiper";
 //components
 import CameraImg from "../img/camera.png";
+import { Link } from "react-router-dom";
 
 const sliderData = [
   {
@@ -62,10 +63,19 @@ const MainSlider = () => {
                     {slide.titlePart2} <br />
                     {slide.titlePart3}
                   </div>
-                  <button className="btn btn-accent mx-auto lg:mx-0">shop now</button>
+
+                  <Link to={"/products/1"}>
+                    <button className="btn btn-accent mx-auto lg:mx-0">
+                      Shop now
+                    </button>
+                  </Link>
                 </div>
                 <div className="flex-1 ">
-                  <img className="lg:absolute lg:-right-20 lg:-bottom-16 -z-10" src={slide.img} alt="" />
+                  <img
+                    className="lg:absolute lg:-right-20 lg:-bottom-16 -z-10"
+                    src={slide.img}
+                    alt=""
+                  />
                 </div>
               </div>
             </SwiperSlide>
